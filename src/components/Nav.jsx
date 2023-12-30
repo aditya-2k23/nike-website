@@ -1,6 +1,6 @@
 import { headerLogo } from "../assets/images";
 import { hamburger } from "../assets/icons";
-import { navLinks } from "../constants";
+import { navHighlight, navLinks } from "../constants";
 
 const Nav = () => {
   return (
@@ -14,7 +14,17 @@ const Nav = () => {
             <li key={item.label}>
               <a
                 href={item.href}
-                className="font-montserrat leading-normal text-lg text-slate-gray"
+                className="font-montserrat leading-normal text-lg text-slate-gray transition-all hover:text-coral-red hover:underline"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+          {navHighlight.map((item) => (
+            <li key={item.label}>
+              <a
+                href={item.href}
+                className="flex justify-center items-center px-6 py-3 border font-montserrat relative bottom-1 text-lg leading-none bg-coral-red text-white border-coral-red transition-all hover:bg-white hover:text-coral-red rounded-full"
               >
                 {item.label}
               </a>
